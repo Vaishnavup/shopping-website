@@ -3,15 +3,18 @@ import homeBannerImg from "../../../public/assets/images/landing-banner.png";
 import Image from "next/image";
 import Banner from "@/components/banner/banner";
 import Link from "next/link";
+import { fetchProducts } from "@/api/api";
 
-const HomePage = () => {
+const HomePage = async () => {
+  const products = await fetchProducts();
+
   return (
     <>
       <Banner />
       <div className="mainContainer">
         <div className="gap-5 justify-between grid grid-cols-4 mb-10">
-          {[...Array(10)].map((_, index) => (
-            <Product key={index} />
+          {products?.products?.slice(0, 12)?.map((items: any) => (
+            <Product key={items?.id} data={items} />
           ))}
         </div>
         <div className="flex justify-center">
