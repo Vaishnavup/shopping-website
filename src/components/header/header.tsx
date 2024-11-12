@@ -1,9 +1,9 @@
 import Image from "next/image";
-import cartIcon from "../../../public/assets/icons/cart-logo.png";
+import cartIcon from "../../../public/assets/icons/cart-shopping.svg";
 export const Header = () => {
   return (
-    <header className="mainContainer sticky">
-      <div className="flex justify-between items-center py-7">
+    <header className="sticky">
+      <div className="flex justify-between items-center py-7 mainContainer">
         <div className="text-2xl font-bold">E-SHOPPING</div>
         <ul className="flex gap-14">
           <li>Home</li>
