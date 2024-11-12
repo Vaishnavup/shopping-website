@@ -1,3 +1,43 @@
+import appstore from "../../../public/assets/images/AppStore.png";
+import playstore from "../../../public/assets/images/GooglePlay.png";
+import Image from "next/image";
+
 export const Footer = () => {
-  return <div>footer</div>;
+  return (
+    <footer className="bg-black mt-auto text-white">
+      <div className="mainContainer ">
+        <div className="flex justify-between py-10 items-center">
+          <div className="text-2xl font-bold">E-SHOPPING</div>
+          <div className="flex gap-12">
+            <ul className="flex flex-col gap-3">
+              <li>Hai</li>
+              <li>nsdnsd</li>
+              <li>dsndjsdn</li>
+              <li>dnsjnd</li>
+            </ul>
+            <ul className="flex flex-col gap-3">
+              <li>Hai</li>
+              <li>nsdnsd</li>
+              <li>dsndjsdn</li>
+              <li>dnsjnd</li>
+            </ul>
+            <ul className="flex flex-col gap-3">
+              <li>Hai</li>
+              <li>nsdnsd</li>
+              <li>dsndjsdn</li>
+              <li>dnsjnd</li>
+            </ul>
+          </div>
+          <div>
+            <div>
+              <Image src={appstore} alt="app-store" />
+            </div>
+            <div>
+              <Image src={playstore} alt="play-store" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 };

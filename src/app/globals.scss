@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mainContainer {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0 100px;
+    width: 100%;
+    @media only screen and (max-width: 1200px) {
+      padding: 0 40px;
+    }
+    @media only screen and (max-width: 767px) {
+      padding: 0 20px;
+    }
+}
+.site-layout{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
