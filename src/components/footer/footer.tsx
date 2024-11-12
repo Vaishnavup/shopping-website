@@ -8,24 +8,24 @@ export const Footer = () => {
       <div className="mainContainer ">
         <div className="flex justify-between py-10 items-center">
           <div className="text-2xl font-bold">E-SHOPPING</div>
-          <div className="flex gap-12">
+          <div className="flex gap-32">
             <ul className="flex flex-col gap-3">
-              <li>Hai</li>
-              <li>nsdnsd</li>
-              <li>dsndjsdn</li>
-              <li>dnsjnd</li>
+              <li>Home</li>
+              <li>My Account</li>
+              <li>Login</li>
+              <li>Cart</li>
             </ul>
             <ul className="flex flex-col gap-3">
-              <li>Hai</li>
-              <li>nsdnsd</li>
-              <li>dsndjsdn</li>
-              <li>dnsjnd</li>
+              <li>Privacy Policy</li>
+              <li>FAQ</li>
+              <li>Contact Us</li>
+              <li>Terms Of Use</li>
             </ul>
             <ul className="flex flex-col gap-3">
-              <li>Hai</li>
-              <li>nsdnsd</li>
-              <li>dsndjsdn</li>
-              <li>dnsjnd</li>
+              <li>Privacy Policy</li>
+              <li>FAQ</li>
+              <li>Contact Us</li>
+              <li>Terms Of Use</li>
             </ul>
           </div>
           <div>
