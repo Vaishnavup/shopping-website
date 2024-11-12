@@ -4,7 +4,7 @@ import Image from "next/image";
 const HomePage = () => {
   return (
     <>
-      <section className="mainContainer landingBanner flex flex-col py-24 gap-7">
+      <section className="mainContainer flex flex-col py-24 gap-7">
         <h1 className="text-6xl font-semibold">Welcome to Our Product Store</h1>
         <p className="text-3xl">Find the best products here</p>
         <button
