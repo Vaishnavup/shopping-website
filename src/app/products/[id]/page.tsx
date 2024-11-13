@@ -7,8 +7,6 @@ const ProductDetails = async ({ params }: any) => {
   const { id } = params;
   const product = await fetchProductById(id);
 
-  console.log(product);
-
   return (
     <>
       <div className="mainContainer">
@@ -16,7 +14,7 @@ const ProductDetails = async ({ params }: any) => {
           <div className="max-w-xl w-full p-7">
             <Image
               src={product?.images?.[0] ?? img}
-              alt="product-img"
+              alt={product?.title}
               width={250}
               height={250}
               className="object-cover"

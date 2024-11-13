@@ -4,8 +4,8 @@ import Image from "next/image";
 const Product = ({ data }: any) => {
   return (
     <>
-      <div className="flex flex-col bg-slate-200 rounded-sm gap-3">
-        <div className=" p-4 flex flex-col items-center justify-center bg-slate-300 h-[200px]">
+      <div className="flex flex-col bg-[#afb08929] rounded-sm gap-3">
+        <div className=" p-4 flex flex-col items-center justify-center bg-[#e8e9ea] h-[200px]">
           <div className="max-w-48 ">
             <Link
               href={{
@@ -14,7 +14,7 @@ const Product = ({ data }: any) => {
             >
               <Image
                 src={data?.thumbnail ?? img}
-                alt="product-img"
+                alt={data?.title}
                 width={150}
                 height={150}
                 className="object-cover"
@@ -28,7 +28,7 @@ const Product = ({ data }: any) => {
               pathname: `/products/${data?.id}`,
             }}
           >
-            <p className="font-semibold text-xl">{data?.title ?? "---"}</p>
+            <p className="font-semibold text-xl min-h-[56px]">{data?.title ?? "---"}</p>
             <span className="font-medium">Rs. {data?.price ?? "---"}</span>
           </Link>
         </div>

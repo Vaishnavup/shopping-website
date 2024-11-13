@@ -7,7 +7,7 @@ export const Footer = () => {
     <footer className="bg-black mt-auto text-white">
       <div className="mainContainer ">
         <div className="flex justify-between py-10 items-center">
-          <div className="text-2xl font-bold">E-SHOPPING</div>
+          <div className="text-2xl font-bold text-white">E-SHOPPING</div>
           <div className="flex gap-32">
             <ul className="flex flex-col gap-3">
               <li>Home</li>
