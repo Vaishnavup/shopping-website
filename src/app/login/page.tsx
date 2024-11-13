@@ -3,8 +3,8 @@ import loginImg from "../../../public/assets/images/loginImg.png";
 const Login = () => {
   return (
     <>
-      <div className="mainContainer flex justify-between items-center my-4">
-        <div className="max-w-xl">
+      <div className="mainContainer flex justify-between items-center my-4 pt-32">
+        <div className="max-w-lg">
           <Image src={loginImg} alt="login-banner-img" />
         </div>
         <div className="max-w-lg w-full">

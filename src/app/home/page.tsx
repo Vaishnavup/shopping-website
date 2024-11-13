@@ -4,7 +4,7 @@ import Image from "next/image";
 import Banner from "@/components/banner/banner";
 import Link from "next/link";
 import { fetchProducts } from "@/api/api";
-
+import arrow from "../../../public/assets/icons/right-arrow.svg";
 const HomePage = async () => {
   const products = await fetchProducts();
 
@@ -12,6 +12,13 @@ const HomePage = async () => {
     <>
       <Banner />
       <div className="mainContainer">
+        <div className="flex justify-between pb-5">
+          <h2 className="text-3xl font-medium">Products</h2>
+          <span className="text-xl flex items-center gap-2 cursor-pointer">
+            View all
+            <Image src={arrow} alt={"right-arrow"} />
+          </span>
+        </div>
         <div className="gap-5 justify-between grid grid-cols-4 mb-10">
           {products?.products?.slice(0, 12)?.map((items: any) => (
             <Product key={items?.id} data={items} />

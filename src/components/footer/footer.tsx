@@ -1,3 +1,4 @@
+import Link from "next/link";
 import appstore from "../../../public/assets/images/AppStore.png";
 import playstore from "../../../public/assets/images/GooglePlay.png";
 import Image from "next/image";
@@ -10,7 +11,9 @@ export const Footer = () => {
           <div className="text-2xl font-bold text-white">E-SHOPPING</div>
           <div className="flex gap-32">
             <ul className="flex flex-col gap-3">
-              <li>Home</li>
+              <li>
+                <Link href="/home">Home</Link>
+              </li>
               <li>My Account</li>
               <li>Login</li>
               <li>Cart</li>

@@ -1,10 +1,14 @@
-"use client"
+"use client";
 import Image from "next/image";
 import cartIcon from "../../../public/assets/icons/cart-shopping.svg";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 export const Header = () => {
+  const pathname = usePathname();
+
   const [scrolled, setScrolled] = useState(false);
+
   const handleScroll = () => {
     const scroll = window.scrollY;
     if (scroll > 100) {
@@ -14,18 +18,31 @@ export const Header = () => {
     }
   };
   useEffect(() => {
-    window.addEventListener("scroll",handleScroll)
-  }, [])
-  
+    if (pathname === "/home" || pathname === "/") {
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    } else {
+      setScrolled(true);
+    }
+  }, [pathname]);
+
   return (
     <header className={`fixed top-0 w-full ${scrolled ? "bgBlack" : ""}`}>
       <div className="flex justify-between items-center py-7 mainContainer">
         <div className="flex items-center gap-9">
           <div className="text-4xl font-bold text-white">E-SHOPPING</div>
           <ul className="flex gap-14 text-white ">
-            <Link href="/home" className="hover:text-red-900">Home</Link>
-            <Link href="/products" className="hover:text-red-900">Product</Link>
-            <Link href="/cart" className="hover:text-red-900">Cart</Link>
+            <a href="/home" className="hover:text-red-900">
+              Home
+            </a>
+            <Link href="/products" className="hover:text-red-900">
+              Product
+            </Link>
+            <Link href="/cart" className="hover:text-red-900">
+              Cart
+            </Link>
           </ul>
         </div>
         <div className="flex w-full max-w-52 gap-5">
