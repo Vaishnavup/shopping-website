@@ -1,10 +1,8 @@
-// context/CartContext.tsx
 "use client";
 
 import { createContext, useContext, useState, ReactNode } from "react";
 import { CartItem } from "../types/Cart";
 import { Product } from "../types/Product";
-
 
 interface CartContextType {
   cart: CartItem[];

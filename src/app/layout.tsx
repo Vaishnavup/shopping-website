@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer/footer";
 import { CartProvider } from "@/utils/context/CartContext";
 import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AuthProvider } from "@/utils/context/AuthContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -47,13 +48,15 @@ export default function RootLayout({
           theme="colored"
           transition={Slide}
         />
-        <CartProvider>
-          <section className="site-layout">
-            <Header />
-            {children}
-            <Footer />
-          </section>
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <section className="site-layout">
+              <Header />
+              {children}
+              <Footer />
+            </section>
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );

@@ -5,8 +5,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useCart } from "@/utils/context/CartContext";
+import { useAuth } from "@/utils/context/AuthContext";
 export const Header = () => {
   const { cart } = useCart();
+  const { email, logout } = useAuth();
   const pathname = usePathname();
 
   const [scrolled, setScrolled] = useState(false);
@@ -49,26 +51,30 @@ export const Header = () => {
             </Link>
           </ul>
         </div>
-        {/* <div className="flex w-full max-w-52 gap-5">
-          <button className="bg-white hover:bg-gray-400 text-black w-full rounded-md p-2 transition-all">
-            <Link href={"/login"}>Login</Link>
-          </button>
+        <div className="flex w-full max-w-52 gap-5">
+          {email ? (
+            <button
+              type="button"
+              className="bg-white hover:bg-red-900 hover:text-white text-black w-full rounded-md p-2 transition-all"
+              onClick={logout}
+            >
+              Logout
+            </button>
+          ) : (
+            <button className="bg-white hover:bg-red-900 hover:text-white text-black w-full rounded-md p-2 transition-all">
+              <Link href={"/login"}>Login</Link>
+            </button>
+          )}
           <div className="max-w-9 relative">
-            <Image src={cartIcon} alt="cart-icon" />
-            <span className="absolute h-5 w-5 rounded-full bg-red-400 text-white font-medium flex items-center justify-center top-0 right-0">
-              1
-            </span>
+            <Link href={"/cart"}>
+              <Image src={cartIcon} alt="cart-icon" />
+              {cart?.length > 0 && (
+                <span className="absolute h-5 w-5 rounded-full bg-red-400 text-white font-medium flex items-center justify-center top-0 right-0">
+                  {cart?.length}
+                </span>
+              )}
+            </Link>
           </div>
-        </div> */}
-        <div className="max-w-9 relative">
-          <Link href={"/cart"}>
-            <Image src={cartIcon} alt="cart-icon" />
-            {cart?.length > 0 && (
-              <span className="absolute h-5 w-5 rounded-full bg-red-400 text-white font-medium flex items-center justify-center top-0 right-0">
-                {cart?.length}
-              </span>
-            )}
-          </Link>
         </div>
       </div>
     </header>
