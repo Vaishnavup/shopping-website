@@ -98,7 +98,7 @@ const CartPage = () => {
         {cart?.length > 0 && (
           <button
             type="button"
-            className="flex justify-center bg-black text-white p-4 rounded-md w-full max-w-52 mx-auto hover:bg-red-900 hover:text-white transition-all"
+            className="flex justify-center bg-black text-white p-4 rounded-md w-full max-w-52 mx-auto hover:bg-red-900 hover:text-white transition-all my-5"
           >
             <Link href={"/checkout"}>Checkout</Link>
           </button>
