@@ -5,9 +5,11 @@ import img from "../../../public/assets/images/joystickImg.png";
 import { useCart } from "@/utils/context/CartContext";
 import Link from "next/link";
 import { toast } from "react-toastify";
+import { useAuth } from "@/utils/context/AuthContext";
 
 const CartPage = () => {
   const { cart, removeFromCart, updateQuantity } = useCart();
+  const { email } = useAuth();
 
   const handleCartRemove = (id: number) => {
     if (id) {
@@ -95,7 +97,7 @@ const CartPage = () => {
             No items in your cart
           </p>
         )}
-        {cart?.length > 0 && (
+        {cart?.length > 0 && email && (
           <button
             type="button"
             className="flex justify-center bg-black text-white p-4 rounded-md w-full max-w-52 mx-auto hover:bg-red-900 hover:text-white transition-all my-5"

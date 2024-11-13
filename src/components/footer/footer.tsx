@@ -9,14 +9,20 @@ export const Footer = () => {
       <div className="mainContainer ">
         <div className="flex justify-between py-10 items-center">
           <div className="text-2xl font-bold text-white">E-SHOPPING</div>
-          <div className="flex gap-32">
-            <ul className="flex flex-col gap-3">
+          <div className="flex gap-32 footermenu">
+            <ul className="flex flex-col gap-3 ">
               <li>
                 <Link href="/home">Home</Link>
               </li>
-              <li>My Account</li>
-              <li>Login</li>
-              <li>Cart</li>
+              <li>
+                <Link href="/login">Login</Link>
+              </li>
+              <li>
+                <Link href="/cart">Cart</Link>
+              </li>
+              <li>
+                <Link href="/login">My Account</Link>
+              </li>
             </ul>
             <ul className="flex flex-col gap-3">
               <li>Privacy Policy</li>
@@ -32,10 +38,10 @@ export const Footer = () => {
             </ul>
           </div>
           <div>
-            <div>
+            <div className="cursor-pointer">
               <Image src={appstore} alt="app-store" />
             </div>
-            <div>
+            <div className="cursor-pointer">
               <Image src={playstore} alt="play-store" />
             </div>
           </div>

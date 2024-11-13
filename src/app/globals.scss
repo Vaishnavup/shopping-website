@@ -19,7 +19,7 @@
   flex-direction: column;
   min-height: 100vh;
 }
-.banner{
+.banner {
   background-image: url(../../public/assets/images/landing-banner.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -27,18 +27,26 @@
   background-color: black;
   height: 80vh;
 }
-.bgBlack{
+.bgBlack {
   background-color: black;
   transition: 0.4s;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0; 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 nextjs-portal {
   display: none;
+}
+
+.footermenu {
+  ul {
+    li {
+      cursor: pointer;
+    }
+  }
 }
