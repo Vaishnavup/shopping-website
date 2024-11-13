@@ -32,7 +32,7 @@ const OrderPlaced = () => {
         <div className="max-w-80 mx-auto">
           <Image src={img} alt="order-success" />
         </div>
-        <button className="bg-black text-white mx-auto p-5 rounded-md hover:bg-slate-400 transition-all">
+        <button className="bg-black text-white mx-auto p-5 rounded-md hover:bg-red-800 hover:text-white transition-all">
           Back to Home Page
         </button>
       </section>
