@@ -1,7 +1,7 @@
 import Image from "next/image";
 import img from "../../../../public/assets/images/ps5.png";
-import { useParams } from "next/navigation";
 import { fetchProductById } from "@/api/api";
+import CartBtn from "@/components/button/CartBtn";
 
 const ProductDetails = async ({ params }: any) => {
   const { id } = params;
@@ -25,12 +25,14 @@ const ProductDetails = async ({ params }: any) => {
             <p className="text-sm">{product?.sku ?? "---"}</p>
             <p className="text-3xl">Rs. {product?.price ?? "---"}</p>
             <p>{product?.description ?? "---"}</p>
-            <button
+            {/* <button
               type="button"
               className="bg-black rounded-md text-white p-4 max-w-52"
+              onClick={() => addToCart(product)}
             >
               Add to Cart
-            </button>
+            </button> */}{" "}
+            <CartBtn product={product} />
           </div>
         </div>
         <div className="mb-10 mt-5">

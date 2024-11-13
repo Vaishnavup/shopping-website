@@ -1,6 +1,9 @@
 import Link from "next/link";
 import img from "../../../public/assets/images/joystickImg.png";
 import Image from "next/image";
+import { toast } from "react-toastify";
+import CardCartBtn from "../button/CardCartBtn";
+
 const Product = ({ data }: any) => {
   return (
     <>
@@ -28,13 +31,13 @@ const Product = ({ data }: any) => {
               pathname: `/products/${data?.id}`,
             }}
           >
-            <p className="font-semibold text-xl min-h-[56px]">{data?.title ?? "---"}</p>
+            <p className="font-semibold text-xl min-h-[56px]">
+              {data?.title ?? "---"}
+            </p>
             <span className="font-medium">Rs. {data?.price ?? "---"}</span>
           </Link>
         </div>
-        <button type="button" className="bg-black text-white py-3">
-          Add to Cart
-        </button>
+        <CardCartBtn product={data} />
       </div>
     </>
   );

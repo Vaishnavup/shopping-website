@@ -3,6 +3,9 @@ import localFont from "next/font/local";
 import "./globals.scss";
 import { Header } from "@/components/header/header";
 import { Footer } from "@/components/footer/footer";
+import { CartProvider } from "@/utils/context/CartContext";
+import { Slide, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,11 +34,26 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <section className="site-layout">
-          <Header />
-          {children}
-          <Footer />
-        </section>
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+          transition={Slide}
+        />
+        <CartProvider>
+          <section className="site-layout">
+            <Header />
+            {children}
+            <Footer />
+          </section>
+        </CartProvider>
       </body>
     </html>
   );

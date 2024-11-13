@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Banner = () => {
@@ -8,9 +9,9 @@ const Banner = () => {
         <p className="text-3xl">Find the best products here</p>
         <button
           type="button"
-          className="bg-white text-black p-5 rounded-md w-full max-w-52 mx-auto hover:bg-slate-400 transition-all"
+          className="bg-white text-black p-4 rounded-md w-full max-w-52 mx-auto hover:bg-red-900 hover:text-white transition-all"
         >
-          Shop Now
+          <Link href={"/products"}>Shop Now</Link>
         </button>
       </div>
     </section>
