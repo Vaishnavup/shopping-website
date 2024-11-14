@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { useCart } from "@/utils/context/CartContext";
 import { useAuth } from "@/utils/context/AuthContext";
 export const Header = () => {
-  const { cart } = useCart();
+  const { cart, clearCart } = useCart();
   const { email, logout } = useAuth();
   const pathname = usePathname();
 
@@ -56,7 +56,10 @@ export const Header = () => {
             <button
               type="button"
               className="bg-white hover:bg-red-900 hover:text-white text-black w-full rounded-md p-2 transition-all"
-              onClick={logout}
+              onClick={() => {
+                logout();
+                clearCart();
+              }}
             >
               Logout
             </button>

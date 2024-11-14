@@ -52,7 +52,7 @@ const Login = () => {
                       type="email"
                       name="email"
                       placeholder="Enter your email address"
-                      className="p-4 border border-solid border-[#ddd] rounded-md"
+                      className="p-4 border border-solid border-[#ddd] rounded-md w-full max-w-96"
                     />
                     <ErrorMessage
                       name="email"
@@ -65,7 +65,7 @@ const Login = () => {
                       type="password"
                       name="password"
                       placeholder="Enter your password"
-                      className="p-4 border border-solid border-[#ddd] rounded-md"
+                      className="p-4 border border-solid border-[#ddd] rounded-md w-full max-w-96"
                     />
                     <ErrorMessage
                       name="password"

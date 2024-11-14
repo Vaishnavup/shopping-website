@@ -10,6 +10,7 @@ import { useAuth } from "@/utils/context/AuthContext";
 const CartPage = () => {
   const { cart, removeFromCart, updateQuantity } = useCart();
   const { email } = useAuth();
+  console.log(cart);
 
   const handleCartRemove = (id: number) => {
     if (id) {
@@ -18,7 +19,12 @@ const CartPage = () => {
     }
   };
 
-  const handleQuantityChange = (productId: number, quantity: number) => {
+  const handleQuantityChange = (
+    productId: number,
+    quantity: number,
+    stock: number
+  ) => {
+    if (quantity < 1 || quantity > stock) return;
     updateQuantity(productId, quantity);
   };
 
@@ -56,7 +62,11 @@ const CartPage = () => {
                   <button
                     className="bg-[#3c3b3bc2] active:bg-slate-700 text-white w-6 rounded-md flex items-center justify-center"
                     onClick={() =>
-                      handleQuantityChange(cartData.id, cartData.quantity - 1)
+                      handleQuantityChange(
+                        cartData.id,
+                        cartData.quantity - 1,
+                        cartData?.stock
+                      )
                     }
                   >
                     -
@@ -65,10 +75,12 @@ const CartPage = () => {
                     type="number"
                     className="outline-none max-w-6 px-1 text-center"
                     value={cartData.quantity}
+                    disabled
                     onChange={(e) =>
                       handleQuantityChange(
                         cartData.id,
-                        parseInt(e.target.value)
+                        parseInt(e.target.value),
+                        cartData?.stock
                       )
                     }
                     min="1"
@@ -76,7 +88,11 @@ const CartPage = () => {
                   <button
                     className="bg-[#3c3b3bc2] active:bg-slate-700 text-white w-6 rounded-md flex items-center justify-center"
                     onClick={() =>
-                      handleQuantityChange(cartData.id, cartData.quantity + 1)
+                      handleQuantityChange(
+                        cartData.id,
+                        cartData.quantity + 1,
+                        cartData?.stock
+                      )
                     }
                   >
                     +
