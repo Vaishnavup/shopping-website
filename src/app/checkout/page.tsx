@@ -6,6 +6,7 @@ import { useAuth } from "@/utils/context/AuthContext";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useCart } from "@/utils/context/CartContext";
+import Link from "next/link";
 const OrderPlaced = () => {
   const { email } = useAuth();
   const { clearCart } = useCart();
@@ -32,9 +33,12 @@ const OrderPlaced = () => {
         <div className="max-w-80 mx-auto">
           <Image src={img} alt="order-success" />
         </div>
-        <button className="bg-black text-white mx-auto p-5 rounded-md hover:bg-red-800 hover:text-white transition-all">
+        <Link
+          href={"/"}
+          className="bg-black text-white mx-auto p-5 rounded-md hover:bg-red-800 hover:text-white transition-all"
+        >
           Back to Home Page
-        </button>
+        </Link>
       </section>
     </>
   );

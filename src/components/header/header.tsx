@@ -40,9 +40,9 @@ export const Header = () => {
             <a href="/">E-SHOPPING</a>
           </div>
           <ul className="flex gap-14 text-white ">
-            <a href="/home" className="hover:text-red-900">
+            <Link href="/home" className="hover:text-red-900">
               Home
-            </a>
+            </Link>
             <Link href="/products" className="hover:text-red-900">
               Product
             </Link>
@@ -61,9 +61,12 @@ export const Header = () => {
               Logout
             </button>
           ) : (
-            <button className="bg-white hover:bg-red-900 hover:text-white text-black w-full rounded-md p-2 transition-all">
-              <Link href={"/login"}>Login</Link>
-            </button>
+            <Link
+              href={"/login"}
+              className="bg-white hover:bg-red-900 hover:text-white text-black w-full rounded-md p-2 transition-all text-center"
+            >
+              Login
+            </Link>
           )}
           <div className="max-w-9 relative">
             <Link href={"/cart"}>

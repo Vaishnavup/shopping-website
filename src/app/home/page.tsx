@@ -14,10 +14,13 @@ const HomePage = async () => {
       <div className="mainContainer">
         <div className="flex justify-between pb-5">
           <h2 className="text-3xl font-medium">Products</h2>
-          <span className="text-xl flex items-center gap-2 cursor-pointer">
+          <Link
+            href={"/products"}
+            className="text-xl flex items-center gap-2 cursor-pointer"
+          >
             View all
             <Image src={arrow} alt={"right-arrow"} />
-          </span>
+          </Link>
         </div>
         <div className="gap-5 justify-between grid grid-cols-4 mb-10">
           {products?.products?.slice(0, 12)?.map((items: any) => (
@@ -25,12 +28,13 @@ const HomePage = async () => {
           ))}
         </div>
         <div className="flex justify-center">
-          <button
+          <Link
+            href={"/products"}
             type="button"
             className="bg-black text-white p-5 rounded-md w-full max-w-52 mb-10 text-center"
           >
-            <Link href={"/products"}>View All</Link>
-          </button>
+            View All
+          </Link>
         </div>
       </div>
     </>

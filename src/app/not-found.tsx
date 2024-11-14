@@ -1,6 +1,7 @@
 import React from "react";
-import img from '../../public/assets/images/404.jpg'
+import img from "../../public/assets/images/404.jpg";
 import Image from "next/image";
+import Link from "next/link";
 const NotFound = () => {
   return (
     <>
@@ -8,9 +9,12 @@ const NotFound = () => {
         <div className="max-w-md mx-auto">
           <Image src={img} alt="order-success" />
         </div>
-        <button className="bg-black text-white mx-auto p-3 rounded-md hover:bg-slate-400 transition-all w-full max-w-28">
+        <Link
+          href={"/"}
+          className="bg-black text-white mx-auto p-3 rounded-md hover:bg-slate-400 transition-all w-full max-w-28 text-center"
+        >
           Back
-        </button>
+        </Link>
       </section>
     </>
   );
